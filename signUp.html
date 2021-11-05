@@ -58,8 +58,16 @@
             <input id="password" type="password" style="width: 30%;">
             <p>Please re-enter password:</p>
             <input id="password2" type="password" style="width: 30%;">
-            <br><a href="loginPage.html"><button id="btn">Sign Up!</button></a>
+            <br><a href="loginPage.html"><button id="btn" onclick="console.log(check())">Sign Up!</button></a>
             <br><p style="margin-top: 50px;">Already have an account? <a class="link" href="loginPage.html">Login here!</a></p>
         </div>
+        <script>
+            function check(){
+                localStorage["name"]=document.getElementById("name").value;
+                localStorage["email"]=document.getElementById("email").value;
+                localStorage["password"]=document.getElementById("password").value;
+                return localStorage["name"] + localStorage["email"] + localStorage["password"]
+            }
+        </script>
     </body>
 </html>
