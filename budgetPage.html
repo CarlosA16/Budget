@@ -1,6 +1,7 @@
 <html>
     <head>
         <title>Budget</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <style>
             #budtitle{
                 margin: 20px 40px;
@@ -109,6 +110,15 @@
                 border-radius: 3px;
                 margin: 15px;
             }
+            #titlist{
+                list-style: none;
+            }
+            #vallist{
+                list-style: none;
+            }
+            li{
+                font-size: 150%;
+            }
         </style>
     </head>
     <body>
@@ -149,15 +159,36 @@
             <div id="explist">
                 <div class="valbox">
                     <h2 class="budh2">Expense Title</h2>
+                    <ul id="titlist"></ul>
                 </div>
                 <div class="valbox">
                     <h2 class="budh2">Expense Value</h2>
+                    <ul id="vallist"></ul>
                 </div>
                 <div class="valbox"></div>
             </div>
         </div>
         <script>
-            
+            let budg = 0
+            let costtot = 0
+            let total = 0
+
+            $("#calc").click(function(){
+                budg = $("#budinput").val()
+                console.log(budg)
+                $("#budval").text('$ ' + budg)
+                $('#expval').text('$ ' + costtot)
+                $('#totval').text('$ '+ (budg-costtot))
+            })
+
+            $('#expbtn').click(function(){
+                let title = $("#expinput").val()
+                let cost = Number($("#moneyin").val())
+                costtot += cost
+                $('#expval').text('$ ' + costtot)
+                $("#titlist").append("<li>"+title+"</li>");
+                $("#vallist").append("<li>"+cost+"</li>");
+            })
         </script>
         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
