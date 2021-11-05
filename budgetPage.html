@@ -1,8 +1,101 @@
 <html>
     <head>
         <title>Budget</title>
+        <style>
+            #budtitle{
+                margin: 20px 40px;
+                color: rgb(50, 50, 50);
+                font-weight: 100;
+            }
+            .budcont{
+                padding: 10px;
+                width: 100%;
+                min-height: 300px;
+                display: flex;
+            }
+            #budin{
+                margin: 40px;
+                min-height: 200px;
+                border: green solid 3px;
+                border-radius: 10px;
+                width: 30%;
+            }
+            #budinput{
+                border-radius: 5px;
+                border: solid green 1px;
+                width: 90%;
+                margin-left: 15px;
+                height: 40px;
+            }
+            #budh2{
+                color: rgb(50, 50, 50);
+                font-weight: 200;
+                margin-left: 15px;
+            }
+            #budvalue{
+                min-height: 200px;
+                border: solid black 2px;
+                width: 60%;
+            }
+            #calc{
+                width: 75px;
+                height: 40px;
+                color: green;
+                background: transparent;
+                border: solid green 1px;
+                border-radius: 3px;
+                margin: 15px;
+            }
+            #budvalue{
+                display: flex;
+                justify-content: space-around;
+            }
+            .valbox{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 32%;
+                height: 100%;
+                border: red solid 1px;
+            }
+            .icon-big{
+                font-size: 400%;
+                font-weight: 800;
+                display: block;
+                color: blue;
+                margin-bottom: 10px;
+                --ionicon-stroke-width: 50px;
+            }
+        </style>
     </head>
     <body>
-        
+        <h1 id="budtitle">BUDGET APP</h1>
+        <div class="budcont">
+            <div id="budin">
+                <h2 id="budh2">Please Enter Your Budget</h2>
+                <input type="text" id="budinput">
+                <button id="calc">Calculate</button>
+            </div>
+            <div id="budvalue">
+                <div class="valbox">
+                    <h2 class="budh2">BUDGET</h2>
+                    <ion-icon name="cash-outline" class="icon-big"></ion-icon>
+                    <h1>$ 0</h1>
+
+                </div>
+                <div class="valbox">
+                    <h2 class="budh2">EXPENSES</h2>
+                    <ion-icon name="card-outline" class="icon-big"></ion-icon>
+                </div>
+                <div class="valbox">
+                    <h2 class="budh2">BALANCE</h2>
+                    <p class="icon-big">$</p>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+        <div class="budcont"></div>
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     </body>
 </html>
