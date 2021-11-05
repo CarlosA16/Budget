@@ -59,12 +59,12 @@
                 border: red solid 1px;
             }
             .icon-big{
-                font-size: 250%;
+                font-size: 400%;
                 font-weight: 800;
                 display: block;
-                color: #e67e22;
+                color: blue;
                 margin-bottom: 10px;
-                --ionicon-stroke-width: 75px;
+                --ionicon-stroke-width: 50px;
             }
         </style>
     </head>
@@ -79,13 +79,18 @@
             <div id="budvalue">
                 <div class="valbox">
                     <h2 class="budh2">BUDGET</h2>
+                    <ion-icon name="cash-outline" class="icon-big"></ion-icon>
+                    <h1>$ 0</h1>
 
                 </div>
                 <div class="valbox">
                     <h2 class="budh2">EXPENSES</h2>
+                    <ion-icon name="card-outline" class="icon-big"></ion-icon>
                 </div>
                 <div class="valbox">
                     <h2 class="budh2">BALANCE</h2>
+                    <p class="icon-big">$</p>
+                    <p></p>
                 </div>
             </div>
         </div>
