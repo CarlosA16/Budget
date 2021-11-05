@@ -1,6 +1,7 @@
 <html>
     <head>
         <title>Budget</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <style>
             #budtitle{
                 margin: 20px 40px;
@@ -34,8 +35,9 @@
             }
             #budvalue{
                 min-height: 200px;
-                border: solid black 2px;
                 width: 60%;
+                display: flex;
+                justify-content: space-around;
             }
             #calc{
                 width: 75px;
@@ -46,17 +48,13 @@
                 border-radius: 3px;
                 margin: 15px;
             }
-            #budvalue{
-                display: flex;
-                justify-content: space-around;
-            }
             .valbox{
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 width: 32%;
                 height: 100%;
-                border: red solid 1px;
+                padding-top: 30px;
             }
             .icon-big{
                 font-size: 400%;
@@ -65,6 +63,61 @@
                 color: blue;
                 margin-bottom: 10px;
                 --ionicon-stroke-width: 50px;
+            }
+            #dollar{
+                margin-top: 0;
+            }
+            #budval{
+                color: green;
+            }
+            #expval{
+                color: red;
+            }
+            #expin{
+                margin: 40px;
+                margin-top: 0px;
+                min-height: 200px;
+                border: red solid 3px;
+                border-radius: 10px;
+                width: 30%;
+            }
+            #explist{
+                min-height: 200px;
+                width: 60%;
+                display: flex;
+                justify-content: space-around;
+            }
+            #expinput{
+                border-radius: 5px;
+                border: solid red 1px;
+                width: 90%;
+                margin-left: 15px;
+                height: 40px;
+            }
+            #moneyin{
+                border-radius: 5px;
+                border: solid red 1px;
+                width: 90%;
+                margin-left: 15px;
+                height: 40px;
+            }
+            #expbtn{
+                width: 100px;
+                height: 40px;
+                color: red;
+                background: transparent;
+                border: solid red 1px;
+                border-radius: 3px;
+                margin: 15px;
+            }
+            #titlist{
+                list-style: none;
+            }
+            #vallist{
+                list-style: none;
+            }
+            li{
+                font-size: 150%;
             }
         </style>
     </head>
@@ -80,21 +133,63 @@
                 <div class="valbox">
                     <h2 class="budh2">BUDGET</h2>
                     <ion-icon name="cash-outline" class="icon-big"></ion-icon>
-                    <h1>$ 0</h1>
+                    <h1 id="budval">$ 0</h1>
 
                 </div>
                 <div class="valbox">
                     <h2 class="budh2">EXPENSES</h2>
                     <ion-icon name="card-outline" class="icon-big"></ion-icon>
+                    <h1 id="expval">$ 0</h1>
                 </div>
                 <div class="valbox">
                     <h2 class="budh2">BALANCE</h2>
-                    <p class="icon-big">$</p>
-                    <p></p>
+                    <p class="icon-big" id="dollar">$</p>
+                    <h1 id="totval">$ 0</h1>
                 </div>
             </div>
         </div>
-        <div class="budcont"></div>
+        <div class="budcont">
+            <div id="expin">
+                <h2 id="budh2">Please Enter Your Expense</h2>
+                <input type="text" id="expinput">
+                <h2 id="budh2">Please Enter Your Expense Amount</h2>
+                <input type="text" id="moneyin">
+                <button id="expbtn">Add Expense</button>
+            </div>
+            <div id="explist">
+                <div class="valbox">
+                    <h2 class="budh2">Expense Title</h2>
+                    <ul id="titlist"></ul>
+                </div>
+                <div class="valbox">
+                    <h2 class="budh2">Expense Value</h2>
+                    <ul id="vallist"></ul>
+                </div>
+                <div class="valbox"></div>
+            </div>
+        </div>
+        <script>
+            let budg = 0
+            let costtot = 0
+            let total = 0
+
+            $("#calc").click(function(){
+                budg = $("#budinput").val()
+                console.log(budg)
+                $("#budval").text('$ ' + budg)
+                $('#expval').text('$ ' + costtot)
+                $('#totval').text('$ '+ (budg-costtot))
+            })
+
+            $('#expbtn').click(function(){
+                let title = $("#expinput").val()
+                let cost = Number($("#moneyin").val())
+                costtot += cost
+                $('#expval').text('$ ' + costtot)
+                $("#titlist").append("<li>"+title+"</li>");
+                $("#vallist").append("<li>"+cost+"</li>");
+            })
+        </script>
         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     </body>
