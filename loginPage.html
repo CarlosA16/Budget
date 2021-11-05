@@ -54,17 +54,29 @@
     <div class="mainB">
         <h1>Log in here!!</h1>
         <p class="text">Your Name</p>
-        <input class="in">
+        <input class="in" id="nm">
         <p class="text">Your Email</p>
-        <input class="in">
-        <p class="text" > Password</p>
-        <input class="in" type="password">
+        <input class="in" id="em">
+        <p class="text"> Password</p>
+        <input class="in" id="pa">
 
 
-        <a href="budgetPage.html"> <button class="Create">Sign In</button></a>
+        <a > <button class="Create" onclick="console.log(testing())">Sign In</button></a>
     </div>
 
-
+    <script>
+        console.log(localStorage["name"] + localStorage["email"] + localStorage["password"])
+        function testing(){
+            if(localStorage["name"]==document.getElementById("nm").value){
+                if(localStorage["email"]==document.getElementById("em").value){
+                    if(localStorage["password"]==document.getElementById("pa").value){
+                        window.location.href = "budgetPage.html"
+                        return true
+                    }
+                }
+            }
+        }
+    </script>
 </body>
 
 </html>
