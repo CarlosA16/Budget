@@ -1,9 +1,64 @@
 <html>
     <head>
         <title>Sign Up</title>
+        <style>
+            body{
+                background-image: url("https://www.sss-solutions.org/wp-content/uploads/2018/01/1116146294-login-page-background-image-112.jpg");
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+                align-items: center;
+                background-repeat: round;
+                color: grey;
+            }
+            #back{
+                margin-top: 5%;
+                background-color: rgb(250, 235, 215);
+                height: 80%;
+                width: 40%;
+            }
+            #btn{
+                margin-top: 7%;
+                background-color: lightblue;
+                border-radius: 40%;
+                border: solid 2px lightblue;
+                width: 80px;
+                height: 50px;
+                color: white;
+                font-weight: bold;
+            }
+            #btn :hover{
+                background-color: white;
+            }
+            input{
+                border: none;
+            }
+            .link{
+                text-decoration: none;
+                color: grey;
+            }
+            .link :hover{
+                background-color: lightblue;
+                transform-origin: bottom right;
+                transition: transform 0.25s ease-out;
+            }
+        </style>
     </head>
     <body>
-        
+        <div id="back">
+            <h1 style="margin-top: 7%;">Welcome to Budget.io!</h1>
+            <p>Please enter your name:</p>
+            <input id="name" type="text" style="width: 40%;">
+            <p>Please enter your email:</p>
+            <input id="email" type="email" style="width: 40%;">
+            <p>Please create a strong password:</p>
+            <input id="password" type="password" style="width: 30%;">
+            <p>Please re-enter password:</p>
+            <input id="password2" type="password" style="width: 30%;">
+            <br><a href="loginPage.html"><button id="btn">Sign Up!</button></a>
+            <br><p style="margin-top: 50px;">Already have an account? <a class="link" href="loginPage.html">Login here!</a></p>
+        </div>
     </body>
     
          <script src="https://code.jquery.com/jquery-3.3.1.min.js"
