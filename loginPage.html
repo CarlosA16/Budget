@@ -1,7 +1,8 @@
 <html>
 
 <head>
-    <title>Sign Up</title>
+    <title>Log In</title>
+ 
     <style>
         body{
             background-image: url("https://cdn.wallpapersafari.com/80/94/AC21PJ.jpg");
@@ -45,61 +46,24 @@
 
 
 <body>
-
-    <div class="mainB">
+ 
+    <div class="mainB" >
         <h1>Log in here!!</h1>
         <p class="text">Your Name</p>
         <input class="in">
-        <p  class="text" >Your Email</p>
+        <p  class="text" id="logEmail">Your Email</p>
         <input class="in">
-        <p class="text"> Password</p>
+        <p class="text" id="logPassword"> Password</p>
         <input class="in">
        
-        
-    </body>
-
-
-
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-<script src="index.js"></script>
-
-
-<script>
-    function validateLoginForm() {
-        var mail = document.getElementById("logEmail").value;
-        var password = document.getElementById("logPassword").value;
-    
-        if (mail == "" || password == "") {
-            document.getElementById("errorMsg").innerHTML = "Please fill the required fields"
-            return false;
-        }
-    
-    
-        else {
-            alert("Successfully logged in");
-            return true;
-        }
-    }
-                function validateSignupForm() {
-        var mail = document.getElementById("signEmail").value;
-        var password = document.getElementById("signPassword").value;
-    
-        if (mail == "" || password == "") {
-            document.getElementById("errorMsg").innerHTML = "Please fill the required fields"
-            return false;
-        }
-    
-    
-        else {
-            alert("Successfully signed up");
-            return true;
-        }
-    }
-            </script>
-        <button class="Create">Sign In</button>
+        <button onClick="validateLoginForm()" class="Create">Sign In</button>
+  
+ 
+      
     </div>
     
+      <script src="script.js"></script> 
+    <script src="script2.js"></script> 
 
 </body>
 

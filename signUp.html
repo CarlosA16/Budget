@@ -1,6 +1,8 @@
 <html>
     <head>
+
         <title>Sign Up</title>
+
         <style>
             body{
                 background-image: url("https://www.sss-solutions.org/wp-content/uploads/2018/01/1116146294-login-page-background-image-112.jpg");
@@ -46,57 +48,29 @@
         </style>
     </head>
     <body>
+       
         <div id="back">
             <h1 style="margin-top: 7%;">Welcome to Budget.io!</h1>
             <p>Please enter your name:</p>
-            <input id="name" type="text" style="width: 40%;">
+            <input id="name" type="text" placeholder="Name" style="width: 40%;">
+
             <p>Please enter your email:</p>
-            <input id="email" type="email" style="width: 40%;">
+            <input id="signEmail" type="email" placeholder="Email" style="width: 40%;">
+
             <p>Please create a strong password:</p>
-            <input id="password" type="password" style="width: 30%;">
+            <input id="signPassword" type="password" placeholder="password" style="width: 30%;">
+
             <p>Please re-enter password:</p>
             <input id="password2" type="password" style="width: 30%;">
-            <br><a href="loginPage.html"><button id="btn">Sign Up!</button></a>
+
+            <br><a href="loginPage.html"><button onClick="validateSignupForm()" id="btn">Sign Up!</button></a>
+
             <br><p style="margin-top: 50px;">Already have an account? <a class="link" href="loginPage.html">Login here!</a></p>
         </div>
+        <script src="script.js"></script>
+        <script src="script2.js"></script> 
     </body>
     
-         <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-        <script src="index.js"></script>
-
-
-        <script>
-function validateLoginForm() {
-	var mail = document.getElementById("logEmail").value;
-	var password = document.getElementById("logPassword").value;
-
-	if (mail == "" || password == "") {
-		document.getElementById("errorMsg").innerHTML = "Please fill the required fields"
-		return false;
-	}
-
-
-	else {
-		alert("Successfully logged in");
-		return true;
-	}
-}
-            function validateSignupForm() {
-	var mail = document.getElementById("signEmail").value;
-	var password = document.getElementById("signPassword").value;
-
-	if (mail == "" || password == "") {
-		document.getElementById("errorMsg").innerHTML = "Please fill the required fields"
-		return false;
-	}
-
-
-	else {
-		alert("Successfully signed up");
-		return true;
-	}
-}
-        </script>
+     
   
 </html>
